@@ -6,51 +6,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xacademy Clase 1 maquetacion</title>
     <style>
+        :root{
+            --font-family: intel, Arial, Helvetica, sans-serif;
+            --h1-font-weight: 600;
+            --p-font-weight: 500;
+            --violet: #6b53f0;
+            --white: rgb(255, 255, 255);
+            --purple: #9e23ff;
+            --black: black;
+            --link-color: black;
+        }
         body {
+            font-family: var(--font-family);
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         p {
-            margin-right: 40px;
+            font-size: 13px;
+            font-weight: var(--p-font-weight);
         }
         h1 {
-            margin: 0px 400px;
+            font-size: 28px;
+            margin: 0px 27vw;
+            font-weight: var(--h1-font-weight);
             text-align: center;
         }
-        button.redondo {
-            background-color: white;
-            border: 1px solid black;
+        #container_padding{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 130px;
+        }
+        .transition{
+            transition: 0.8s;
+        }
+        .hover_back_violet{
+            fill: var(--violet);
+        }
+        .hover_back_black:hover{
+            background-color: var(--black);
+            color:var(--white);
+        }
+        .hover_back_violet:hover{
+            background-color: var(--violet);
+            color: var(--white);
+        }
+        .hover_back_violet:hover > svg{
+            fill: var(--white);
+        }
+        .hover_back_black:hover > svg{
+            fill: var(--white);
+        }
+        .redondo {
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            background-color: var(--white);
+            border: 2px solid black;
             border-radius: 25px;
             padding: 0px 20px;
             height: 32px;
+        }
+        .redondo svg{
+            height: 12px;
+            width: 10px;
         }
         div#introduction-actions {
             display: flex;
             justify-content: center;
         }
+        #header_container{            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-bottom: 1px solid gray;
+        }
+        #header-left{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #header-left img{
+            height: 40px;
+            width: 142px;
+        }
+        #header-right{
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            cursor: pointer;
+        }
+        #header-right p:hover{
+            color: var(--violet);
+        }
+        .icons{
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .icons div{
+            display: flex;
+            align-items: center;
+            height: 80px;
+            width: 100%;
+        }
+        .icons div svg{
+            height: 13.88px;
+            width: 12.24px;
+        }
+        .icons div:hover > a > svg{
+            fill: var(--purple);
+        }
+        .purple_border{
+            border-color: var(--violet);
+            color: var(--violet);
+        }
+        @media screen and (max-width: 1100px) {
+            h1{
+                margin: 0 10vw;
+            }
+            #header-right{
+                display: none;
+            }
+            #container_padding{
+                justify-content: center;
+            }
+        }
+        a{
+            text-decoration: none;
+        }
+        #introduction{
+            padding: 70px 30px;
+        }
+        #introduction-text{
+            margin: 10px 0 15px 0;
+        }
+        #introduction-text h1{
+            padding: 0 10px;
+        }
     </style>
 </head>
 <body>
-    <div id="header" style="border-bottom: 1px solid gray; display: flex; padding: 10px 100px; justify-content: space-between">
-        <div id="header-left">
-            <img src="logo.svg">
-        </div>
-        <div id="header-right" style="display: flex; align-items: center;">
-            <p>Nosotros</p>
-            <p>Programas</p>
-            <p>Capaciontaciones</p>
-            <p>Alianzas</p>
-            <p>Contacto</p>
-            <button class="redondo">Sumate +</button>
-        </div>
+    <div id="header_container">
+        <header id="container_padding">
+            <div id="header-left">
+                <img src="./logo.svg">
+            </div>
+            <div id="header-right">
+                <p class="transition">Nosotros</p>
+                <p class="transition" id="programas">Programas</p>
+                <p class="transition">Capaciontaciones</p>
+                <p class="transition">Alianzas</p>
+                <p class="transition">Contacto</p>
+                <a href="https://donaronline.org/technology-with-purpose-foudation/sumate-genera-impacto" target="_blank">
+                    <button class="redondo hover_back_black transition" >Sumate +</button>
+                </a>
+                <div class="icons">
+                    <div>
+                        <a href="https://www.instagram.com/technologywithpurpose/" target="_blank">
+                            <svg class="transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.linkedin.com/company/technologywithpurpose/" target="_blank">
+                            <svg class="transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
     </div>
-    <div id="introduction" style="padding: 48px;">
+    <div id="introduction">
         <div id="introduction-text">
             <h1>Somos una Fundación dedicada a mejorar la calidad de vida de las personas y su entorno, a través de la tecnología.</h1>
         </div>
         <div id="introduction-actions" style="margin-top: 25px;">
-            <button class="redondo">Contactanos -></button>
-            <button class="redondo" style="margin-left: 14px;">Sumate +</button>
+            <button class="redondo hover_back_black transition">Contactanos <svg class="transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></button>
+            <button class="redondo purple_border hover_back_violet transition" style="margin-left: 14px;">Sumate <svg class="transition" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></button>
         </div>
     </div>
 </body>
-</html>
